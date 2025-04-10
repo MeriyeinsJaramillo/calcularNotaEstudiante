@@ -1,26 +1,43 @@
-import java.util.Scanner;
+import java.lang.runtime.SwitchBootstraps;
+import java.util.Scanner; /* linea obligatoria en el proyecto*/
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
-    }
- /* Desarrollar un sistema de notas para un estudiante que desea saber su nota final (de cada materia)
- El sistema debe pedir el nombre del estudiante, el documento y el programa al que esta matriculado (Menú de opciones: Desarrollo de software, diseño grafico, gastronomía)
- Debe permitir seleccionar la materia (Menú opciones
- Desarrollo: Lógica, metodologías, introducción
- Diseño: Tipografías, iconografía, semántica
- Gastronomía: Costos, panadería dulce, cocina internacional)
- El calculo de notas es de la siguiente manera:
- Para cada materia hay un examen que equivale al 20% de la nota, un taller que equivale el 30% de la nota y un examen final que equivale al 50% de la nota)
+        Scanner sc =new Scanner(System.in); /* linea obligatoria en el proyecto*/
 
- Una vez calculada la nota final tener en cuenta que:
- Si la nota esta entre 0 y 2 el estudiante pierde definitivamente
- Si la nota entre 2.1 y 2.9 tiene derecho a un plan de mejoramiento
- Si la nota igual o superior a 3, así le quedara la materia
- Si el estudiante hace plan de mejoramiento, la nota máxima de la materia será 3
- El sistema debe discriminar la información general del estudiante:
-Nombre, documento, nota materia*/
+        System.out.println("Ingrese nombre del estudiante: ");
+        String nombreEstudiante = sc.nextLine();
+        System.out.println("ingrese el documento del estudiante: ");
+        String documentoEstudiante = sc.nextLine();
+        System.out.println("Seleccione el programa: \n1 - Desarrollo de software: \n2 - Diseñografico: \n3 - gastronomía");
+        String programa = sc.nextLine();
+        switch (programa){
+            case"1":
+                System.out.println("Programa de desarrollo de software");
+                System.out.println("Seleccione la materia: \n1 - Lógica de programación: \n2 - Metodologias agiles: \n3 - Introducción a la programación: ");
+                String materia=sc.nextLine();
+                switch (materia) {
+                    case"1":
+                        System.out.println("Nota Lógica de programación");
+                        break;
+                    case"2":
+                        System.out.println("Nota Metodologias agiles");
+                        break;
+                    case"3":
+                        System.out.println("Nota Introducción a la programación");
+                        break;
+                }
+                break;
+            case"2":
+                System.out.println("Programa de diseño grafico");
+                break;
+            case"3":
+                System.out.println("Programa de gastronomia");
+                break;
 
-    scanner sc =new Scanner(System.in);
+        }
+
+
+        }
 
 }
